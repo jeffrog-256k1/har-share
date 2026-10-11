@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; worker-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'"
+    />
+    <link rel="icon" href="data:," />
+    <title>HAR Share — share the timing, leave the payload</title>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="https://github.com/jeffrog-256k1/har-share"
+        ><b>↗</b> har share <small>/ 0.1</small></a
+      >
+      <nav>
+        <a data-t="docs" href="https://github.com/jeffrog-256k1/har-share"></a
+        ><label class="sr" for="language" data-t="language"></label
+        ><select id="language">
+          <option value="en">English</option>
+          <option value="ko">한국어</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="ja">日本語</option>
+          <option value="es">Español</option>
+        </select>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">NETWORK / SHAREABLE STRUCTURE</p>
+          <h1><span data-t="title"></span><br /><em data-t="accent"></em></h1>
+        </div>
+        <p class="intro" data-t="intro"></p>
+      </section>
+      <section id="drop" class="drop">
+        <div>
+          <h2 data-t="drop"></h2>
+          <p data-t="limit"></p>
+        </div>
+        <div class="actions">
+          <input
+            id="file"
+            class="sr"
+            type="file"
+            accept=".har,.json,application/json"
+            aria-label="HAR file"
+          /><button class="primary" id="choose" data-t="choose"></button
+          ><button id="sample" data-t="sample"></button>
+        </div>
+      </section>
+      <p id="state" role="status" data-state="idle"></p>
+      <p id="error" role="alert" hidden></p>
+      <section id="result" hidden>
+        <div class="stats">
+          <div><b id="count"></b><span data-t="requests"></span></div>
+          <div><b id="hosts"></b><span data-t="hosts"></span></div>
+          <div><b id="fields"></b><span data-t="fields"></span></div>
+        </div>
+        <section class="removed">
+          <h2 data-t="removed"></h2>
+          <div id="removed"></div>
+        </section>
+        <div class="section-head">
+          <h2 data-t="waterfall"></h2>
+          <button id="clear" data-t="clear"></button>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th data-t="request"></th>
+                <th data-t="status"></th>
+                <th data-t="size"></th>
+                <th data-t="timing"></th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <button id="previous" data-t="previous"></button><span id="page"></span
+          ><button id="next" data-t="next"></button>
+        </div>
+        <div class="downloads">
+          <button class="primary" id="download" data-t="download"></button
+          ><button id="report" data-t="report"></button>
+        </div>
+      </section>
+      <section class="notes">
+        <article>
+          <h3 data-t="noteTitle"></h3>
+          <p data-t="note"></p>
+        </article>
+        <article>
+          <h3 data-t="howTitle"></h3>
+          <p data-t="how"></p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <a href="https://leejungjae.app">BY JEFFROG-256K1 ↗</a
+      ><span>SELECT / REDUCE / REVIEW / SHARE</span
+      ><a href="https://github.com/jeffrog-256k1/har-share">MIT · GITHUB ↗</a>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
